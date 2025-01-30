@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="StylesProducto.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script src="ProductoFunctions.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <header class="d-none d-lg-block">
+      <!-- Logo centrado -->
+      <div class="logo-links">
+        <!-- Enlaces a la izquierda -->
+        <div class="left-links">
+          <a href="HomeTpDsw.html">Inicio</a>
+          <a href="Productos.html">Productos</a>
+        </div>
+        <img src="Imagenes/TecnoStartLogo.png" alt="Logo" />
+        <!-- Enlaces a la Derecha -->
+        <div class="right-links">
+          <a href="RegistroForm.html">Iniciar Sesión/Registrarse</a>
+          <button class="cart-btn">
+            <i class="bi bi-bag"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navbar offcanvas para móviles -->
+    <nav class="navbar navbar-dark bg-dark fixed-top d-lg-none">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">TecnoStart</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasDarkNavbar"
+          aria-controls="offcanvasDarkNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end text-bg-dark"
+          tabindex="-1"
+          id="offcanvasDarkNavbar"
+          aria-labelledby="offcanvasDarkNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menú</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" href="HomeTpDsw.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Productos.html">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="RegistroForm.html"
+                  >Iniciar Sesión/Registrarse</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#offcanvasCarrito"
+                  role="button"
+                  aria-controls="offcanvasCarrito"
+                  >Carrito</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex mt-3" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Search"
+              />
+              <button class="btn btn-success" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Offcanvas Carrito -->
+    <div
+      class="offcanvas offcanvas-end text-bg-dark bg-white"
+      tabindex="-1"
+      id="offcanvasCarrito"
+      aria-labelledby="offcanvasCarritoLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasCarritoLabel">
+          Carrito de Compras
+        </h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body" id="carritoContenido">
+        <!-- Los productos se agregarán aquí -->
+        <hr class="separador" />
+      </div>
+
+      <!-- Sección de Total -->
+      <div
+        class="offcanvas-footer d-flex flex-column justify-content-between align-items-center p-3"
+      >
+        <div class="mb-2">
+          <p class="mb-1 total-texto" style="font-weight: bold">Total:</p>
+          <h4 id="cart-total" class="text-success mb-0">$0</h4>
+        </div>
+        <button class="btn btn-success">Ir a pagar</button>
+      </div>
+    </div>
+
+    <hr class="header.separador" />
+
+    <div class="tittle-Product">
+      <h1>Productos</h1>
+    </div>
+
+    <div class="product-grid" data-id="1">
+      <!-- Producto 1 -->
+      <div class="product-item">
+        <img
+          src="imagenes/tumb_Notebook-Hp-255-G10-Ryzen-7-7730U-16Gb-Ssd-512Gb-15-Win11_48021_1.jpeg"
+          alt="Producto 1"
+        />
+        <h2>Notebook Gamer Lenovo</h2>
+        <p>Laptop</p>
+        <p><strong>$1.512.269</strong></p>
+        <button
+          class="add-to-cart"
+          onclick="agregarAlCarrito({
+          img: 'imagenes/tumb_Notebook-Hp-255-G10-Ryzen-7-7730U-16Gb-Ssd-512Gb-15-Win11_48021_1.jpeg',
+          nombre: 'Notebook Gamer Lenovo',
+          precio: '$1.512.269'
+        })"
+        >
+          Agregar al carrito
+        </button>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="product-item" data-id="2">
+        <img src="imagenes/tumb_30170_1.jpeg" alt="Producto 2" />
+        <h2>Impresora Brother Láser</h2>
+        <p>Impresora</p>
+        <p><strong>$193.469</strong></p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="product-item" data-id="3">
+        <img src="imagenes/tumb_36366_1.jpeg" alt="Producto 3" />
+        <h2>Monitor Led 19" LG Hd</h2>
+        <p>Monitor</p>
+        <p><strong>$114.999</strong></p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="product-item" data-id="4">
+        <img src="imagenes/tumb_47758_1.jpeg" alt="Producto 4" />
+        <h2>Consola Lenovo Legion</h2>
+        <p>Consola</p>
+        <p><strong>$1.634.129</strong></p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+      <!-- Producto 5 -->
+      <div class="product-item" data-id="5">
+        <img
+          src="imagenes/tumb_Gabinete-Mid-Tower-XPG-Cruiser-White-3-Fan-Argb-Vidrio-Templado_47231_1.jpeg"
+          alt="Producto 5"
+        />
+        <h2>Gabinete Mid Tower Cruiser</h2>
+        <p>Gabinete</p>
+        <p><strong>$101.999</strong></p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="product-item" data-id="6">
+        <img
+          src="imagenes/tumb_Monitor-Gamer-25-Samsung-Plano-G4-IPS-Odyssey-240Hz-1Ms-LS25BG400ELCZB_47831_1.jpeg"
+          alt="Producto 5"
+        />
+        <h2>Gabinete Mid Tower Cruiser</h2>
+        <p>Gabinete</p>
+        <p><strong>$509.789</strong></p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+
+      <!-- Producto 7 -->
+      <div class="product-item" data-id="7">
+        <img
+          src="imagenes/tumb_Monitor-Gamer-32-Gigabyte-Edge-Qhd-Ipx-165Hz-1Ms-GS32Q_48117_1.jpeg"
+          alt="Producto 7"
+        />
+        <h2>Monitor Gamer 32" Gigabyte</h2>
+        <p>Monitor</p>
+        <p><strong>$578.709</strong></p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+
+      <!-- Producto 8 -->
+      <div class="product-item" data-id="8">
+        <img
+          src="imagenes/tumb_Monitor-Led-29-LG-FullHd-Ultrawide-75Hz-5Ms-29WQ600-B-WFHD_45808_1.jpeg"
+          alt="Producto 8"
+        />
+        <h2>Monitor Gamer 29" LG</h2>
+        <p>Monitor</p>
+        <p><strong>$332.769</strong></p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+      <!-- Producto 9 -->
+      <div class="product-item" data-id="9">
+        <img
+          src="imagenes/tumb_Notebook-Gamer-Gigabyte-Aorus-i7-16Gb-Ssd-1Tb-RTX-4060-8Gb-17-Win11_47768_1.jpeg"
+          alt="Producto 9"
+        />
+        <h2>Notebook Gamer Gigabyte</h2>
+        <p>Laptop</p>
+        <p><strong>$2.049.999</strong></p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+
+      <!-- Producto 10 -->
+      <div class="product-item" data-id="10">
+        <img
+          src="imagenes/tumb_Placa-De-Video-Geforce-RTX-4070-Ti-16Gb-Super-Msi-Ventus-2x-Oc-White_48163_1.jpeg"
+          alt="Producto 10"
+        />
+        <h2>Placa De Video Geforce RTX</h2>
+        <p>Placa de video</p>
+        <p><strong>$1.220.429</strong></p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+
+      <!-- Producto 11 -->
+      <div class="product-item" data-id="11">
+        <img
+          src="imagenes/tumb_Placa-Video-GeForce-RTX-4070-12Gb-Super-Asus-Prime-Oc_47905_1.jpeg"
+          alt="Producto 11"
+        />
+        <h2>Placa De Video GeForce</h2>
+        <p>Placa de video</p>
+        <p><strong>$940.999</strong></p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+
+      <!-- Producto 12 -->
+      <div class="product-item" data-id="12">
+        <img
+          src="imagenes/tumb_Placa-Video-GeForce-RTX-4070-12Gb-Super-Asus-Rog-Gaming-Oc_48172_1.jpeg"
+          alt="Producto 12"
+        />
+        <h2>Placa De Video GeForce</h2>
+        <p>Placa de video</p>
+        <p><strong>$1.173.999</strong></p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+    </div>
+  </body>
+
+  <footer>
+    <hr class="separador" />
+    <div class="footer-container">
+      <div class="footer-links">
+        <div class="footer-logo">
+          <img src="Imagenes/TecnoStartLogo.png" alt="Logo" />
+          <!-- Asegúrate de poner la ruta correcta del logo -->
+        </div>
+        <div class="footer-info">
+          <h3>Información General</h3>
+          <ul>
+            <li><a href="HomeTpDsw.html">Inicio</a></li>
+            <li><a href="Productos.html">Productos</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-connect">
+          <h3>Conéctate con nosotros</h3>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
+        <div class="footer-subscribe">
+          <h3>Suscribirse</h3>
+          <form>
+            <input type="email" placeholder="Ingresa tu correo" />
+            <button type="submit">Suscribirse</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <hr class="separador" />
+    <div class="footer-bottom">
+      <div class="footer-text">
+        <p>© 2024 TecnoStart. Todos los derechos reservados.</p>
+        <p><a href="#">Política de Privacidad</a></p>
+        <p><a href="#">Términos de Servicio</a></p>
+        <p><a href="#">Configuración de Cookies</a></p>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+</html>

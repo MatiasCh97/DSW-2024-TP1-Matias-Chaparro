@@ -1,0 +1,411 @@
+// Definición de variables
+$primary-color: #3b94a3;
+$secondary-color: #0078a0;
+$border-color: #000000;
+$text-color: #000000;
+$background-color: #f9f9f9;
+$button-bg-color: #000000;
+$footer-bg-color: #ffffff;
+
+// Estilos globales
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+// Encabezado
+header {
+  display: flex;
+  flex-wrap: wrap; // Ajuste automático de los elementos
+  justify-content: center; // Centra todos los elementos horizontalmente
+  align-items: center; // Centra verticalmente
+  padding: 20px;
+  gap: 15px; // Espacio uniforme entre los enlaces y el logo
+
+  .logo {
+    flex: 1; // Asegura que el logo ocupe una proporción fija
+    display: flex;
+    justify-content: center; // Centra horizontalmente dentro de su contenedor
+
+    img {
+      height: 120px; // Ajusta el tamaño según tu logo
+      width: 120px;
+    }
+  }
+
+  .left-links,
+  .right-links {
+    flex: 1; // Distribuye espacio equitativamente
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &.right-links {
+      justify-content: flex-end; // Para la derecha
+    }
+
+    &.left-links {
+      justify-content: flex-start; // Para la izquierda
+    }
+  }
+
+  .cart-btn {
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: $primary-color;
+    }
+
+    .cart-icon {
+      font-size: 18px;
+      color: black;
+    }
+  }
+}
+
+// Título del producto
+.tittle-Product {
+  display: flex;
+  justify-content: center; // Centrar horizontalmente
+  align-items: center; // Centrar verticalmente
+  height: 100px; // Define una altura, ajusta según lo necesario
+}
+
+// Grilla de productos
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // 4 columnas
+  gap: 20px; // Espaciado entre elementos
+  padding: 20px;
+  background-color: $primary-color;
+  border: solid $border-color;
+  justify-items: center; // Centrar contenido horizontalmente
+}
+
+// Elemento de producto
+.product-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 250px;
+  min-height: 350px;
+  box-sizing: border-box;
+  background-color: $background-color;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover; // Puede ser 'contain' si prefieres que toda la imagen sea visible
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    line-height: 1.2;
+    max-height: 2.4em; // Limita la altura máxima para nombres largos
+    overflow: hidden;
+  }
+
+  p {
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.4;
+    max-height: 4.2em; // Limita la altura máxima para descripciones largas
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  button,
+  .add-to-cart {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+}
+
+// Separador
+.separador {
+  border: none;
+  height: 3px; // Grosor de la línea
+  background-color: $border-color; // Color de la línea
+  margin: 20px 0; // Espaciado arriba y abajo
+}
+
+// Estilos del footer
+footer {
+  background-color: $footer-bg-color;
+  color: $text-color;
+  padding: 40px 20px;
+
+  .footer-container {
+    display: flex;
+    justify-content: flex-start; // Cambiar para alinear todo a la izquierda
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    .footer-logo img {
+      width: 120px; // Ajusta el tamaño de la imagen del logo
+      height: auto;
+      margin-right: 100px; // Reducir el margen entre el logo y "Información general"
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: auto; // Controla el ancho del footer
+      margin-left: 20px;
+
+      .footer-info,
+      .footer-connect,
+      .footer-subscribe {
+        margin: 0; // Eliminar márgenes adicionales
+        margin-bottom: 10px; // Agregar espacio vertical entre las secciones
+        padding: 0;
+        margin-right: 50px; // Agregar margen derecho para espaciar más las secciones
+
+        h3 {
+          font-size: 1.2em;
+          color: $text-color;
+          margin-bottom: 10px;
+          text-decoration: underline; // Subrayar el texto
+        }
+
+        ul {
+          list-style-type: none;
+          padding: 0;
+
+          li {
+            margin: 5px 0;
+
+            a {
+              text-decoration: none;
+              color: $text-color;
+              font-size: 1em;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+
+        button {
+          padding: 10px 20px;
+          background-color: $text-color;
+          color: white;
+          border: black;
+          border-radius: 4px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $primary-color;
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      background-color: $primary-color;
+      display: flex;
+      flex-direction: column;
+      align-items: center; // Asegura que todo esté centrado horizontalmente
+      text-align: center; // Centra el texto
+      padding: 20px 15px;
+      border: 2px solid #050505;
+      border-radius: 25px;
+      margin-top: 20px;
+      gap: 10px; // Añade espacio uniforme entre los elementos
+
+      .footer-text {
+        color: $text-color;
+        display: flex;
+        font-weight: bold;
+
+        p {
+          margin: 20px 20px;
+        }
+
+        a {
+          text-decoration: none;
+          color: $primary-color;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .footer-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+          margin-left: 20px;
+          color: white;
+          font-size: 1.5em;
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Estilos de los enlaces
+a:link,
+a:visited {
+  text-decoration: none;
+  color: black; // Enlaces negros en todos los estados
+  font-weight: bold;
+
+  &:hover {
+    color: $primary-color; // Azul al pasar el mouse
+  }
+
+  &:active {
+    color: black; // Negro cuando están activos
+  }
+}
+
+// Media Query para dispositivos móviles
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .logo img {
+    height: 50px;
+    width: auto;
+  }
+
+  .left-links,
+  .right-links {
+    flex: 1;
+    justify-content: center; // Centra los enlaces
+    margin-bottom: 10px;
+  }
+
+  .cart-btn {
+    font-size: 14px;
+    padding: 5px 10px; // Reducir tamaño de los botones
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); // 2 columnas en lugar de 4
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .product-item {
+    width: 100%;
+    max-width: 200px; // Reducir tamaño de los productos
+    min-height: 300px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .footer-text {
+    font-size: 0.7em;
+    padding: 10px;
+  }
+}
+
+// Media Query para tabletas
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo img {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-info,
+  .footer-connect,
+  .footer-subscribe {
+    margin-right: 0;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .left-links,
+  .right-links {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .cart-btn {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr); // 3 columnas para tabletas
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .product-item {
+    width: 100%;
+    max-width: 220px; // Ajustar tamaño de los productos
+    min-height: 320px;
+  }
+}
