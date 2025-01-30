@@ -6,31 +6,35 @@ body {
 header {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
   gap: 15px;
 }
-header .logo {
+header .logo-links {
   flex: 1;
   display: flex;
   justify-content: center;
 }
-header .logo img {
+header .logo-links img {
   height: 120px;
   width: 120px;
 }
 header .left-links,
 header .right-links {
-  flex: 1;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   gap: 20px;
+}
+header .left-links.left-links,
+header .right-links.left-links {
+  justify-content: flex-start;
+  flex-grow: 1;
 }
 header .left-links.right-links,
 header .right-links.right-links {
   justify-content: flex-end;
+  flex-grow: 1;
 }
 header a {
   color: black;
@@ -94,7 +98,8 @@ header a {
 .main-container .buy-btn:hover {
   background-color: #3b94a3;
 }
-.main-container .buy-btn:link, .main-container .buy-btn:visited {
+.main-container .buy-btn:link,
+.main-container .buy-btn:visited {
   background-color: #000000;
   color: white;
   text-decoration: none;
@@ -410,4 +415,4 @@ a:active {
   .main-container p {
     font-size: 1em;
   }
-}/*# sourceMappingURL=StylesHome.css.map */
+} /*# sourceMappingURL=StylesHome.css.map */
