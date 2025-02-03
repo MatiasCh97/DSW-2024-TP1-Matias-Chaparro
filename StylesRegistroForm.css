@@ -101,7 +101,7 @@ header a {
   width: 50px;
   height: 50px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-right: 10px;
 }
 #offcanvasCarrito .carrito-item button {
@@ -188,7 +188,8 @@ header a {
 .main-container .buy-btn:hover {
   background-color: #3d85a1 !important;
 }
-.main-container .buy-btn:link, .main-container .buy-btn:visited {
+.main-container .buy-btn:link,
+.main-container .buy-btn:visited {
   background-color: #000000;
   color: white;
   text-decoration: none;
@@ -492,4 +493,4 @@ a:active {
   .main-container p {
     font-size: 1em;
   }
-}/*# sourceMappingURL=StylesRegistroForm.css.map */
+} /*# sourceMappingURL=StylesRegistroForm.css.map */

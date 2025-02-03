@@ -56,7 +56,74 @@ header .cart-btn .cart-icon {
   font-size: 18px;
   color: black;
 }
+/* Estilo para el mensaje de éxito */
+.mensaje-exito {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #3b94a3;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
 
+#offcanvasCarrito .offcanvas-header,
+#offcanvasCarrito .offcanvas-body {
+  color: #000;
+}
+#offcanvasCarrito .offcanvas-footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #ddd;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+#offcanvasCarrito .offcanvas-footer .d-flex {
+  flex-direction: column;
+  align-items: start;
+}
+#offcanvasCarrito .offcanvas-footer p {
+  margin-bottom: 5px;
+}
+#offcanvasCarrito .offcanvas-footer .total-texto {
+  font-weight: bold;
+  color: black;
+}
+#offcanvasCarrito .offcanvas-footer #cart-total {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #28a745;
+}
+#offcanvasCarrito .offcanvas-footer .btn {
+  width: 100%;
+}
+#offcanvasCarrito .carrito-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#offcanvasCarrito .carrito-item img {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  margin-right: 10px;
+}
+#offcanvasCarrito .carrito-item button {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+#offcanvasCarrito .carrito-item button:hover {
+  background-color: rgb(0, 0, 0);
+}
 .tittle-Product {
   display: flex;
   justify-content: center;
@@ -139,7 +206,7 @@ header .cart-btn .cart-icon {
 
 footer {
   background-color: #ffffff;
-  color: #000000;
+  color: black;
   padding: 40px 20px;
 }
 footer .footer-container {
@@ -160,48 +227,62 @@ footer .footer-container .footer-links {
   max-width: auto;
   margin-left: 20px;
 }
-footer .footer-container .footer-links .footer-info,
-footer .footer-container .footer-links .footer-connect,
-footer .footer-container .footer-links .footer-subscribe {
+footer .footer-container .footer-info,
+footer .footer-container .footer-connect,
+footer .footer-container .footer-subscribe {
   margin: 0;
   margin-bottom: 10px;
   padding: 0;
   margin-right: 50px;
 }
-footer .footer-container .footer-links .footer-info h3,
-footer .footer-container .footer-links .footer-connect h3,
-footer .footer-container .footer-links .footer-subscribe h3 {
+footer .footer-container .footer-info h3,
+footer .footer-container .footer-connect h3,
+footer .footer-container .footer-subscribe h3 {
   font-size: 1.2em;
-  color: #000000;
+  color: #050505;
   margin-bottom: 10px;
-  text-decoration: underline;
 }
-footer .footer-container .footer-links .footer-info ul,
-footer .footer-container .footer-links .footer-connect ul,
-footer .footer-container .footer-links .footer-subscribe ul {
+footer .footer-container .footer-info ul,
+footer .footer-container .footer-connect ul,
+footer .footer-container .footer-subscribe ul {
   list-style-type: none;
   padding: 0;
 }
-footer .footer-container .footer-links .footer-info ul li,
-footer .footer-container .footer-links .footer-connect ul li,
-footer .footer-container .footer-links .footer-subscribe ul li {
+footer .footer-container .footer-info li,
+footer .footer-container .footer-connect li,
+footer .footer-container .footer-subscribe li {
   margin: 5px 0;
 }
-footer .footer-container .footer-links .footer-info ul li a,
-footer .footer-container .footer-links .footer-connect ul li a,
-footer .footer-container .footer-links .footer-subscribe ul li a {
+footer .footer-container .footer-info a,
+footer .footer-container .footer-info button,
+footer .footer-container .footer-connect a,
+footer .footer-container .footer-connect button,
+footer .footer-container .footer-subscribe a,
+footer .footer-container .footer-subscribe button {
   text-decoration: none;
-  color: #000000;
+  color: #050505;
   font-size: 1em;
 }
-footer .footer-container .footer-links .footer-info ul li a:hover,
-footer .footer-container .footer-links .footer-connect ul li a:hover,
-footer .footer-container .footer-links .footer-subscribe ul li a:hover {
+footer .footer-container .footer-info a:hover,
+footer .footer-container .footer-info button:hover,
+footer .footer-container .footer-connect a:hover,
+footer .footer-container .footer-connect button:hover,
+footer .footer-container .footer-subscribe a:hover,
+footer .footer-container .footer-subscribe button:hover {
   text-decoration: underline;
 }
-footer .footer-container .footer-links .footer-info button,
-footer .footer-container .footer-links .footer-connect button,
-footer .footer-container .footer-links .footer-subscribe button {
+footer .footer-container .footer-info .footer-subscribe input,
+footer .footer-container .footer-connect .footer-subscribe input,
+footer .footer-container .footer-subscribe .footer-subscribe input {
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  width: 200px;
+}
+footer .footer-container .footer-info .footer-subscribe button,
+footer .footer-container .footer-connect .footer-subscribe button,
+footer .footer-container .footer-subscribe .footer-subscribe button {
   padding: 10px 20px;
   background-color: #000000;
   color: white;
@@ -209,12 +290,27 @@ footer .footer-container .footer-links .footer-subscribe button {
   border-radius: 4px;
   cursor: pointer;
 }
-footer .footer-container .footer-links .footer-info button:hover,
-footer .footer-container .footer-links .footer-connect button:hover,
-footer .footer-container .footer-links .footer-subscribe button:hover {
+footer .footer-container .footer-info .footer-subscribe button:hover,
+footer .footer-container .footer-connect .footer-subscribe button:hover,
+footer .footer-container .footer-subscribe .footer-subscribe button:hover {
   background-color: #3b94a3;
 }
-footer .footer-container .footer-bottom {
+footer .footer-container .footer-info h3,
+footer .footer-container .footer-connect h3,
+footer .footer-container .footer-subscribe h3 {
+  font-size: 1.2em;
+  color: #050505;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+footer .footer-container .footer-info ul li a {
+  font-size: 0.9em;
+  color: #050505;
+}
+footer .footer-container .footer-info ul li a:hover {
+  text-decoration: underline;
+}
+footer .footer-bottom {
   background-color: #3b94a3;
   display: flex;
   flex-direction: column;
@@ -226,32 +322,33 @@ footer .footer-container .footer-bottom {
   margin-top: 20px;
   gap: 10px;
 }
-footer .footer-container .footer-bottom .footer-text {
-  color: #000000;
+footer .footer-bottom .footer-text {
+  color: black;
   display: flex;
   font-weight: bold;
 }
-footer .footer-container .footer-bottom .footer-text p {
+footer .footer-bottom .footer-text p {
   margin: 20px 20px;
 }
-footer .footer-container .footer-bottom .footer-text a {
+footer .footer-bottom .footer-text a {
+  color: black;
   text-decoration: none;
-  color: #3b94a3;
 }
-footer .footer-container .footer-bottom .footer-text a:hover {
+footer .footer-bottom .footer-text a:hover {
   text-decoration: underline;
+  color: white;
 }
-footer .footer-container .footer-bottom .footer-social {
+footer .footer-bottom .footer-social {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-footer .footer-container .footer-bottom .footer-social a {
+footer .footer-bottom .footer-social a {
   margin-left: 20px;
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 1.5em;
 }
-footer .footer-container .footer-bottom .footer-social a:hover {
+footer .footer-bottom .footer-social a:hover {
   color: white;
 }
 

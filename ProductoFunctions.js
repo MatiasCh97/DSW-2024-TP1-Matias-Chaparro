@@ -59,6 +59,21 @@ function agregarAlCarrito(producto) {
   totalCarrito += precioProducto;
   actualizarTotal();
   guardarCarritoEnLocalStorage(producto);
+
+  // Mostrar el mensaje de éxito
+  const mensajeExito = document.createElement("div");
+  mensajeExito.classList.add("mensaje-exito");
+  mensajeExito.innerText = "Producto agregado con éxito";
+  document.body.appendChild(mensajeExito);
+
+  // Eliminar el mensaje de éxito después de 3 segundos
+  setTimeout(() => {
+    mensajeExito.remove();
+  }, 3000);
+  const carritoOffcanvas = new bootstrap.Offcanvas(
+    document.getElementById("offcanvasCarrito")
+  );
+  carritoOffcanvas.show();
 }
 
 // Función para eliminar un producto del carrito
